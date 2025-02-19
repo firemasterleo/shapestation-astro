@@ -33,57 +33,7 @@
   </template>
   
 
-<script setup>
-  import {onMounted} from 'vue';
 
-  
-  onMounted(async () => {
-  const gsapModule = await import("gsap");
-  const ScrollTriggerModule = await import("gsap/ScrollTrigger");
-
-  const gsap = gsapModule.gsap;
-  const ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-    
-    let shapeAnimation; // Store animation reference
-    shapeAnimation = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" },  })
-    .from(".s", { y: -90, duration:0.9}, ) // V enters
-      .from(".h", { y: -90, duration:0.95 },0.1,) // O enters slightly before V finishes
-      .from(".a", { y: -90, duration:0.98 }, 0.14,) // M enters slightly before O finishes
-      .from(".p", { y: -90, duration:0.98 }, 0.14,) // M enters slightly before O finishes
-      .from(".e", { y: -90, duration:0.98 }, 0.18,) // M enters slightly before O finishes
-      .from(".s2", { y: -90, duration:1 }, 0.18) // M enters slightly before O finishes
-      .from(".t", { y: -90, duration:1.2 }, 0.22) // M enters slightly before O finishes
-      .from(".a2", { y: -90, duration:1.4 }, 0.24) // M enters slightly before O finishes
-      .from(".t2", { y: -90, duration:1.6, }, 0.26) // M enters slightly before O finishes
-      .from(".i", { y: -90, duration:1.8, }, 0.3) // M enters slightly before O finishes
-      .from(".o", { y: -90, duration:2, }, 0.32) // M enters slightly before O finishes
-      .from(".n", { y: -100, duration:2.2, }, 0.38) // M enters slightly before O finishes
-      
-      let mm = gsap.matchMedia();
-      
-      mm.add("(min-width: 800px)", () => {
-        
-        shapeAnimation = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } })
-        .fromTo(".s", { y: "-30vh" }, { y: "0vh", duration: 0.9 }) 
-        .fromTo(".h", { y: "-30vh" }, { y: "0vh", duration: 0.95 }, 0.1) 
-        .fromTo(".a", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.14) 
-        .fromTo(".p", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.14) 
-        .fromTo(".e", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.18) 
-          .fromTo(".s2", { y: "-30vh" }, { y: "0vh", duration: 1 }, 0.18) 
-          .fromTo(".t", { y: "-30vh" }, { y: "0vh", duration: 1.2 }, 0.22) 
-          .fromTo(".a2", { y: "-30vh" }, { y: "0vh", duration: 1.4 }, 0.24) 
-          .fromTo(".t2", { y: "-30vh" }, { y: "0vh", duration: 1.6 }, 0.26) 
-          .fromTo(".i", { y: "-30vh" }, { y: "0vh", duration: 1.8 }, 0.3) 
-          .fromTo(".o", { y: "-30vh" }, { y: "0vh", duration: 2 }, 0.32) 
-          .fromTo(".n", { y: "-30vh" }, { y: "0vh", duration: 2.2 }, 0.38);
-      });
-  });
-
-
-</script>
 
 <style lang="scss" scoped>
  @use '/src/sass/variables' as *;
