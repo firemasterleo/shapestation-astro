@@ -3,7 +3,7 @@
       <div class="section">
         <div class="shape">
           <h1 ref="s" class="s">S</h1>
-            <h1 ref="h" class="h">h</h1>
+            <h1 class="h">h</h1>
             <h1 ref="a" class="a">a</h1>
             <h1 ref="p" class="p">p</h1>
             <h1 ref="e" class="e">e</h1>

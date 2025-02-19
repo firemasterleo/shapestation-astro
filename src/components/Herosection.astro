@@ -9,18 +9,18 @@
   });
 
   shapeAnimation
-    .from(".s", { y: -90, duration: 0.9 })
-    .from(".h", { y: -90, duration: 0.95 }, 0.1)
-    .from(".a", { y: -90, duration: 0.98 }, 0.14)
-    .from(".p", { y: -90, duration: 0.98 }, 0.14)
-    .from(".e", { y: -90, duration: 0.98 }, 0.18)
-    .from(".s2", { y: -90, duration: 1 }, 0.18)
-    .from(".t", { y: -90, duration: 1.2 }, 0.22)
-    .from(".a2", { y: -90, duration: 1.4 }, 0.24)
-    .from(".t2", { y: -90, duration: 1.6 }, 0.26)
-    .from(".i", { y: -90, duration: 1.8 }, 0.3)
-    .from(".o", { y: -90, duration: 2 }, 0.32)
-    .from(".n", { y: -100, duration: 2.2 }, 0.38);
+    .fromTo(".s", { y: -90,  }, { y: 0, duration: 0.9 })
+    .fromTo(".h", { y: -90,  }, { y: 0, duration: 0.95 }, 0.1)
+    .fromTo(".a", { y: -90,  }, { y: 0, duration: 0.98 }, 0.14)
+    .fromTo(".p", { y: -90,  }, { y: 0, duration: 0.98 }, 0.14)
+    .fromTo(".e", { y: -90,  }, { y: 0, duration: 0.98 }, 0.18)
+    .fromTo(".s2", { y: -90,  }, { y: 0, duration: 1 }, 0.18)
+    .fromTo(".t", { y: -90,  }, { y: 0, duration: 1.2 }, 0.22)
+    .fromTo(".a2", { y: -90,  }, { y: 0, duration: 1.4 }, 0.24)
+    .fromTo(".t2", { y: -90,  }, { y: 0, duration: 1.6 }, 0.26)
+    .fromTo(".i", { y: -90,  }, { y: 0, duration: 1.8 }, 0.3)
+    .fromTo(".o", { y: -90,  }, { y: 0, duration: 2 }, 0.32)
+    .fromTo(".n", { y: -100,  }, { y: 0, duration: 2.2 }, 0.38);
 
   // Media Query for Larger Screens
   let mm = gsap.matchMedia();
@@ -198,6 +198,7 @@
              height: fit-content;
              color: $textcolorwhite;
              text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.1);
+            //  transform: translateY(-90%);
    
            }
          }
