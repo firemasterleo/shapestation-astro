@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay7: document.querySelector(".overlay7"),
     overlay8: document.querySelector(".overlay8"),
   };
+  
 
   const overlayAnimations = [
     { element: overlays.overlay1, start: "top 95%", end: "bottom 70%" },
