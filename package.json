@@ -1,0 +1,19 @@
+{
+  "name": "shapestation-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^5.0.6",
+    "astro": "^5.3.0",
+    "gsap": "^3.12.7",
+    "lenis": "^1.1.20",
+    "pinia": "^3.0.1",
+    "sass": "^1.85.0"
+  }
+}
