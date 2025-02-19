@@ -1,9 +1,16 @@
-
+<!-- Import GSAP and your animations script -->
 <script>
-import "../animations/section2Animations.js"; // This will run on page load
-  
-  </script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  import { Section2Animations } from "../animations/Section2Animations.js"; // Adjust the path as needed
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Ensure the DOM is fully loaded before running animations
+  document.addEventListener("DOMContentLoaded", () => {
+    Section2Animations();
+  });
+</script>
 <div class="sectioncontainer">
     <div class="section">
       <div class="tagline-mobile">

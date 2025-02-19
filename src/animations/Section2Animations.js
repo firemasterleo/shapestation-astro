@@ -1,9 +1,10 @@
+// Section2Animations.js
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", () => {
+export function Section2Animations() {
   const overlays = {
     overlay1: document.querySelector(".overlay1"),
     overlay2: document.querySelector(".overlay2"),
@@ -14,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay7: document.querySelector(".overlay7"),
     overlay8: document.querySelector(".overlay8"),
   };
-  
 
   const overlayAnimations = [
     { element: overlays.overlay1, start: "top 95%", end: "bottom 70%" },
@@ -45,4 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   });
-});
+}
