@@ -4,4 +4,4 @@
   status = 200
 
 [build.environment]
-  GO_VERSION = "1.21"
+ GO_VERSION = "1.19"
