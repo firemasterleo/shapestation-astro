@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function Section2Animations() {
+export function SectionAnimations() {
   const overlays = {
     overlay1: document.querySelector(".overlay1"),
     overlay2: document.querySelector(".overlay2"),

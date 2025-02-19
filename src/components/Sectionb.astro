@@ -1,0 +1,291 @@
+<script>
+    import gsap from 'gsap';
+    import ScrollTrigger from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const overlays = {
+        overlay1: document.querySelector(".overlay1"),
+        overlay2: document.querySelector(".overlay2"),
+        overlay3: document.querySelector(".overlay3"),
+        overlay4: document.querySelector(".overlay4"),
+        overlay5: document.querySelector(".overlay5"),
+        overlay6: document.querySelector(".overlay6"),
+        overlay7: document.querySelector(".overlay7"),
+        overlay8: document.querySelector(".overlay8"),
+      };
+  
+      const overlayAnimations = [
+        { element: overlays.overlay1, start: "top 95%", end: "bottom 70%" },
+        { element: overlays.overlay2, start: "top 85%", end: "bottom 60%" },
+        { element: overlays.overlay3, start: "top 75%", end: "bottom 50%" },
+        { element: overlays.overlay4, start: "top 65%", end: "bottom 40%" },
+        { element: overlays.overlay5, start: "top 55%", end: "bottom 30%" },
+        { element: overlays.overlay6, start: "top 95%", end: "bottom 70%" },
+        { element: overlays.overlay7, start: "top 85%", end: "bottom 60%" },
+        { element: overlays.overlay8, start: "top 75%", end: "bottom 50%" },
+      ];
+  
+      overlayAnimations.forEach(({ element, start, end }) => {
+        if (element) {
+          gsap.fromTo(
+            element,
+            { x: "0%" },
+            {
+              x: "100%",
+              ease: "cubic-bezier(0.25, 1, 0.5, 1)",
+              scrollTrigger: {
+                trigger: element,
+                start,
+                end,
+                scrub: 1.7,
+              },
+            }
+          );
+        }
+      });
+    });
+  </script>
+  <div class="sectioncontainer">
+      <div class="section">
+        <div class="tagline-mobile">
+          <div class="line1">
+            <div class="overlay overlay1"></div>
+            <p>We blend the power of design</p>
+          </div>
+          <div class="line line2">
+            <div class="overlay overlay2" ></div>
+            <p>performance and Strategy,</p>
+          </div>
+          <div class="line line3">
+            <div class="overlay overlay3"></div>
+            <p>Crafting immersive experiences</p>
+          </div>
+          <div class="line line4">
+            <div class="overlay overlay4"></div>
+            <p>that captivate and convert.</p>
+          </div>
+          <div class="line line5">
+            <div class="overlay overlay5"></div>
+            <p>See <span>our services <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="24" height="24">
+                <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path>
+              </svg>
+            </span></span></p>
+          </div>
+        </div>
+    
+        <div class="tagline-desktop">
+          <div class="line1">
+            <div class="overlay overlay6"></div>
+            <p>We blend the power of design, performance, and</p>
+          </div>
+          <div class="line line2">
+            <div class="overlay overlay7"></div>
+            <p>Strategy into creating immersive experiences</p>
+          </div>
+          <div class="line line3">
+            <div class="overlay overlay8"></div>
+            <p>that captivate and convert. See <span>our services</span></p>
+          </div>
+        </div>
+    
+        <div class="bottom-tagline">
+          <div class="left">
+            <p>Curate. Elevate. Evolve.</p>
+          </div>
+          <div class="right">
+            <p>We are a growth accelerator.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <style lang="scss">
+      @use '/src/sass/variables' as *;
+     .sectioncontainer {
+       // background-color: rgb(70, 96, 181); /* Solid black background */
+       width: 100%;
+       height: 100vh; /* Large enough to allow scrolling */
+     display: flex;
+  //    border: solid red;
+     overflow: hidden;
+     
+     
+       .section {
+       background-color: $primarycolorblack; /* Solid black background */
+         width: 80rem;
+         height: 100%; /* Full viewport height */
+         margin-inline: auto;
+         // border: solid green;
+     
+     .tagline-mobile {
+       display: none;
+     }
+         .tagline-desktop{
+             padding-inline: 0.5rem;
+             padding-top: 2.5rem;
+     
+             .line1 {
+               border: solid red;
+               position: relative;
+               .overlay {
+                 position: absolute;
+                 width: 100%;
+                 height: 100%;
+                 // border: solid green;
+                 // transform: translateX(0%);
+                 // transition: all 6s;
+                 background: linear-gradient(
+                      280deg,
+                     rgba(0, 0, 0, 0.769) 85%, /* Least transparent at the top */
+                     rgba(255, 255, 255, 0)   /* 0.854 Darker and less transparent at the bottom */
+                 );          
+               }
+               p {
+                 color: $textcolorwhite; 
+                 font-size: 4vw;      
+                 font-weight: 500;
+                 border: solid;
+                }
+             }
+             .line {
+               // border: solid red;
+               position: relative;
+               .overlay {
+                 position: absolute;
+                 right: 0;
+                 width: 120%;
+                 height: 100%;
+                 // border: solid green;
+                 // transform: translateX(100%);
+                 // transition: all 6s;
+                 background: linear-gradient(
+                      280deg,
+                     rgba(0, 0, 0, 0.769) 85%, /* Least transparent at the top */
+                     rgba(255, 255, 255, 0)   /* 0.854 Darker and less transparent at the bottom */
+                 );          
+               }
+               p {
+                 color: $textcolorwhite; 
+                 font-size: 4vw;      
+                 font-weight: 500;
+                 // line-height: 1.7rem;
+     
+                }
+             }
+           }
+     
+     
+       }
+     }
+     
+     
+     
+     @media (max-width: 800px) {
+       .sectioncontainer {
+         .section {
+           width: 100vw;
+           height: 100vh;
+           // background-color: white;
+     .tagline-desktop {
+       display: none;
+     }
+           .tagline-mobile {
+             display: block;
+             padding-inline: 0.5rem;
+             padding-top: 2.5rem;
+     
+             .line1 {
+               // border: solid red;
+               position: relative;
+               .overlay {
+                 position: absolute;
+                 width: 100%;
+                 height: 100%;
+                 // border: solid green;
+                 // transform: translateX(0%);
+                 // transition: all 6s;
+                 background: linear-gradient(
+                      280deg,
+                     rgba(0, 0, 0, 0.769) 85%, /* Least transparent at the top */
+                     rgba(255, 255, 255, 0)   /* 0.854 Darker and less transparent at the bottom */
+                 );          
+               }
+               p {
+                 color: $textcolorwhite; 
+                 font-size: 5.8vw;      
+                 font-weight: 500;
+                 line-height: 1.7rem;
+                }
+             }
+             .line {
+               // border: solid red;
+               position: relative;
+               .overlay {
+                 position: absolute;
+                 right: 0;
+                 z-index: 2;
+                 width: 120%;
+                 height: 100%;
+                 // border: solid green;
+                 // transform: translateX(100%);
+                 // transition: all 6s;
+                 background: linear-gradient(
+                      280deg,
+                     rgba(0, 0, 0, 0.769) 85%, /* Least transparent at the top */
+                     rgba(255, 255, 255, 0)   /* 0.854 Darker and less transparent at the bottom */
+                 );          
+               }
+               p {
+                 color: $textcolorwhite; 
+                 font-size: 5.7vw;      
+                 font-weight: 500;
+                 line-height: 1.7rem;
+     
+                }
+             }
+             .line5 {
+               position: relative;
+               z-index: 0;
+               // border: solid red;
+               span {
+                 // border-bottom: solid 1.5px $textcolorwhite;            
+                 text-decoration: underline;
+                   span {
+                     border: none;
+                     svg {
+                       fill: $textcolorwhite;
+                       rotate:135deg;
+                       // border: solid red;
+                       position: relative;
+                       top: 3px;
+                     }
+                   }
+                 }
+             }
+           }
+     
+           .bottom-tagline {
+             border: solid red;
+             height: 40rem;
+           }
+     
+         }
+       }
+     }
+     
+     
+     
+     @media (max-width: 1200px) and (min-width: 800px) {
+       .sectioncontainer {
+         .section {
+     
+         }
+       }
+     }
+     
+     
+     
+     </style>
