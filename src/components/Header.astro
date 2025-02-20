@@ -4,9 +4,6 @@
          isScrollingUp: false, 
          lastScrollTop: 0, 
         threshold: window.innerHeight * 0.95, // 95% of viewport height
-
-         isActive: false, 
-         toggleMenu() { this.isActive = !this.isActive; } 
      }"
      x-init="
      window.addEventListener('scroll', () => {
@@ -63,7 +60,7 @@
       </nav>
 
       <!-- Hamburger Menu -->
-      <div class="hamburger" :class="{ 'is-active': isActive }" @click="isActive = !isActive">
+      <div class="hamburger"  :class="{ 'is-active': $store.menu.isActive }" @click="$store.menu.toggleMenu()" >
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>

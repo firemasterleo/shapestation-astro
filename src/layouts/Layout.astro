@@ -1,5 +1,11 @@
 ---
+
 import '../sass/main.scss';
+import SidePanel from '../components/SidePanel.astro';
+// import Herosection from '../components/Herosection.astro';
+
+
+
 ---
 
 
@@ -20,19 +26,108 @@ import '../sass/main.scss';
 
 		<script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+		<script is:inline>
+			document.addEventListener("alpine:init", () => {
+			  Alpine.store("menu", {
+				isActive: false,
+				toggleMenu() {
+				  this.isActive = !this.isActive;
+				  console.log("Menu toggled:", this.isActive);
+
+				}
+			  });
+			});
+		  </script>
+
 	</head>
 	<body>
+		<!-- <p>Menu State: <span x-text="$store.menu.isActive"></span></p> -->
+		<div x-data class="sidepanel" :class="{ 'is-expanded': $store.menu.isActive }">
+			<SidePanel/>
+	   </div>
 		<slot />
 	</body>
 </html>
 
-<style>
+
+<style lang="scss">
+	@use '/src/sass/variables' as *;
+	
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
 		scroll-behavior: smooth;
-	},
 
-</style>
+		p {
+			color: white;
+		}
+	}
+
+
+	
+	@media (max-width: 800px) { 
+	
+	.sidepanel {
+	
+							// opacity: 0;
+							// visibility: hidden;
+							width: 100vw;
+							height: 0dvh;
+							// transform: translatey(-100%);
+							// padding-top: 6rem;
+							// padding-left: 1.5rem;
+							border-radius: 0.6rem;
+							display: flex;
+							flex-direction: column;
+							gap: 1.2rem;
+							overflow-y: hidden;
+							// z-index: 0;
+							position: fixed;
+							// top: 3rem;
+							z-index: 24;
+						visibility: hidden;    
+						background-color: #101010;
+							
+							// visibility: hidden;
+							// border: solid red;
+							transition: all 0.8s  cubic-bezier(0.95, 0.05, 0.2, 1);
+  
+							
+							
+							&.is-expanded {
+							  // transition: all 0.35s; 
+							  transition: all 0.7s cubic-bezier(0.95, 0.05, 0.05, 1); 
+							  // opacity: 1;
+							  // transform: translatey(0%);
+							  height: 100dvh;
+							  visibility: visible;
+							}
+	
+								}
+	
+								.sidepanel-overlay {
+								  width: 100vw;
+								  height: 100vh;
+								  background-color: rgba(0, 0, 0, 0.658);
+								  position: fixed;
+								  bottom: 0;
+								  z-index: 10;
+								  opacity: 0;
+								  visibility: hidden;
+								  transition: opacity 0.3s ease-out, visibility 0s linear 0.5s; 
+														
+								  
+							&.is-expanded {
+							  opacity: 1;
+							visibility: visible;
+							transition: opacity 0.5s ease-in;
+												  
+	}
+	
+								}
+	}
+	
+	</style>
