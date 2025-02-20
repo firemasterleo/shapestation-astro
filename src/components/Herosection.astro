@@ -1,48 +1,4 @@
-<script>
-    import gsap from 'gsap';
-    import ScrollTrigger from 'gsap/ScrollTrigger';
-    gsap.registerPlugin(ScrollTrigger);
-  
-    document.addEventListener("DOMContentLoaded", () => {
-  let shapeAnimation = gsap.timeline({
-    defaults: { duration: 1, ease: "power2.out" },
-  });
 
-  shapeAnimation
-    .fromTo(".s", { y: -90,  }, { y: 0, duration: 0.9 })
-    .fromTo(".h", { y: -90,  }, { y: 0, duration: 0.95 }, 0.1)
-    .fromTo(".a", { y: -90,  }, { y: 0, duration: 0.98 }, 0.14)
-    .fromTo(".p", { y: -90,  }, { y: 0, duration: 0.98 }, 0.14)
-    .fromTo(".e", { y: -90,  }, { y: 0, duration: 0.98 }, 0.18)
-    .fromTo(".s2", { y: -90,  }, { y: 0, duration: 1 }, 0.18)
-    .fromTo(".t", { y: -90,  }, { y: 0, duration: 1.2 }, 0.22)
-    .fromTo(".a2", { y: -90,  }, { y: 0, duration: 1.4 }, 0.24)
-    .fromTo(".t2", { y: -90,  }, { y: 0, duration: 1.6 }, 0.26)
-    .fromTo(".i", { y: -90,  }, { y: 0, duration: 1.8 }, 0.3)
-    .fromTo(".o", { y: -90,  }, { y: 0, duration: 2 }, 0.32)
-    .fromTo(".n", { y: -100,  }, { y: 0, duration: 2.2 }, 0.38);
-
-  // Media Query for Larger Screens
-  let mm = gsap.matchMedia();
-
-  mm.add("(min-width: 800px)", () => {
-    gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } })
-      .fromTo(".s", { y: "-30vh" }, { y: "0vh", duration: 0.9 })
-      .fromTo(".h", { y: "-30vh" }, { y: "0vh", duration: 0.95 }, 0.1)
-      .fromTo(".a", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.14)
-      .fromTo(".p", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.14)
-      .fromTo(".e", { y: "-30vh" }, { y: "0vh", duration: 0.98 }, 0.18)
-      .fromTo(".s2", { y: "-30vh" }, { y: "0vh", duration: 1 }, 0.18)
-      .fromTo(".t", { y: "-30vh" }, { y: "0vh", duration: 1.2 }, 0.22)
-      .fromTo(".a2", { y: "-30vh" }, { y: "0vh", duration: 1.4 }, 0.24)
-      .fromTo(".t2", { y: "-30vh" }, { y: "0vh", duration: 1.6 }, 0.26)
-      .fromTo(".i", { y: "-30vh" }, { y: "0vh", duration: 1.8 }, 0.3)
-      .fromTo(".o", { y: "-30vh" }, { y: "0vh", duration: 2 }, 0.32)
-      .fromTo(".n", { y: "-30vh" }, { y: "0vh", duration: 2.2 }, 0.38);
-  });
-});
-  
-  </script>
 
 
 <div class="sectioncontainer">
@@ -250,4 +206,58 @@
        }
      }
    }
+
+   .shape h1 {
+  display: inline-block;
+  transform: translateY(-90px); /* Start off-screen */
+//   opacity: 0; /* Start hidden */
+//   animation: slideIn 1s ease-out forwards;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-90px);
+    // opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    // opacity: 1;
+  }
+}
+
+/* Apply staggered animation delays */
+.s  { animation: slideIn 0.9s ease-out forwards; animation-delay: 0s; }
+.h  { animation: slideIn 0.95s ease-out forwards; animation-delay: 0.1s; }
+.a  { animation: slideIn 0.98s ease-out forwards; animation-delay: 0.14s; }
+.p  { animation: slideIn 0.98s ease-out forwards; animation-delay: 0.14s; }
+.e  { animation: slideIn 0.98s ease-out forwards; animation-delay: 0.18s; }
+.s2 { animation: slideIn 1s ease-out forwards; animation-delay: 0.18s; }
+.t  { animation: slideIn 1.2s ease-out forwards; animation-delay: 0.22s; }
+.a2 { animation: slideIn 1.4s ease-out forwards; animation-delay: 0.24s; }
+.t2 { animation: slideIn 1.6s ease-out forwards; animation-delay: 0.26s; }
+.i  { animation: slideIn 1.8s ease-out forwards; animation-delay: 0.3s; }
+.o  { animation: slideIn 2s ease-out forwards; animation-delay: 0.32s; }
+.n  { animation: slideIn 2.2s ease-out forwards; animation-delay: 0.38s; }
+
+/* Different animation for larger screens */
+@media (min-width: 800px) {
+  .shape h1 {
+    transform: translateY(-30vh);
+    animation: slideInLargeScreen 1s ease-out forwards;
+  }
+
+  @keyframes slideInLargeScreen {
+    from {
+      transform: translateY(-30vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+
    </style>
