@@ -6,6 +6,8 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: "Poppins", serif;
+    // font-family: "Papyrus", fantasy;
+    // font-family: "lato";
     // overflow-y: scroll;
     // width: 100vw;
     // width: calc(100vw - 110rem);    
@@ -25,12 +27,6 @@
   display: none; 
 
 
-}
-
-body.no-scroll {
-  overflow: hidden !important;
-  height: 100vh;
-  touch-action: none; /* Prevents touch scrolling */
 }
 
 
