@@ -10,12 +10,12 @@
        </div>
 
           </div>
-            <div class="menu">
-                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">  
-                        <p :class="{ 'is-expanded': $store.menu.isActive }">Home</p>
+            <div x-data class="menu">
+                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/') }">  
+                        <p @click="window.location.href='/'" :class="{ 'is-expanded': $store.menu.isActive}">Home</p>
                     </div>
-                      <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">  
-                          <p :class="{ 'is-expanded': $store.menu.isActive }">Work</p>
+                      <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/about') }">  
+                          <p @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive, 'is-active': $store.menu.isCurrentRoute('/about') }" >Work</p>
                       </div>
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">  
                         <p :class="{ 'is-expanded': $store.menu.isActive }">About</p>
@@ -85,6 +85,7 @@
     
                                                     
                             } 
+  
   
             .contact {
               display: flex;
@@ -174,18 +175,23 @@
                           letter-spacing: -3px;
                           transition: transform 0.8s cubic-bezier(0.95, 0.05, 0.2, 1);
    
+                         
+        
+                      }
+                      &.is-active {
+                        -webkit-tap-highlight-color: transparent;
+                          border-radius: 0.5rem;
+                        //   transition: all 0 ;
+
+                          
+                          p {
+                            color: #888888;
+                        //   transition: all 0;
+
+                          }
                         }
                         
                       }
-                      .active {
-                    -webkit-tap-highlight-color: transparent;
-                      border-radius: 0.5rem;
-                      
-                      p {
-                        color: #888888;
-                      }
-    
-                  }
   
                       
                   

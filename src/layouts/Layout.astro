@@ -34,7 +34,10 @@ import SidePanel from '../components/SidePanel.astro';
 				  this.isActive = !this.isActive;
 				  console.log("Menu toggled:", this.isActive);
 
-				}
+				},
+				isCurrentRoute(route) {
+        return window.location.pathname === route;
+      }
 			  });
 			});
 		  </script>
