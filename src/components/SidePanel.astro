@@ -14,18 +14,18 @@
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/') }">  
                         <p @click="window.location.href='/'" :class="{ 'is-expanded': $store.menu.isActive}">Home</p>
                     </div>
-                      <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/about') }">  
-                          <p @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive, 'is-active': $store.menu.isCurrentRoute('/about') }" >Work</p>
+                      <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/work') }">  
+                          <p @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive}" >Work</p>
                       </div>
-                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">  
+                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/about') }">  
                         <p :class="{ 'is-expanded': $store.menu.isActive }">About</p>
                     </div>
-                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">  
+                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/Services') }">  
                         <p :class="{ 'is-expanded': $store.menu.isActive }">Services</p>
                     </div>
                   
-                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive">
-                      <p :class="{ 'is-expanded': $store.menu.isActive }">Resource</p>
+                    <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/Blog') }">
+                      <p :class="{ 'is-expanded': $store.menu.isActive }">Blog</p>
                     </div>
                  
                 </div>
