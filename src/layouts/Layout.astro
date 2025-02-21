@@ -2,7 +2,6 @@
 
 import '../sass/main.scss';
 import SidePanel from '../components/SidePanel.astro';
-import Header from '../components/Header.astro';
 
 // import Herosection from '../components/Herosection.astro';
 
@@ -46,12 +45,10 @@ import Header from '../components/Header.astro';
 
 	</head>
 	<body>
-		
-		<Header />
 		<!-- <p>Menu State: <span x-text="$store.menu.isActive"></span></p> -->
 		<div x-data class="sidepanel" :class="{ 'is-expanded': $store.menu.isActive }">
 			<SidePanel/>
-		</div>
+	   </div>
 		<slot />
 	</body>
 </html>
