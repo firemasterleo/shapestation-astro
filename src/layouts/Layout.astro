@@ -37,10 +37,16 @@ import SidePanel from '../components/SidePanel.astro';
 
 				},
 				isCurrentRoute(route) {
-        // Normalize URL (remove trailing slash, convert to lowercase)
-        const currentPath = window.location.pathname.replace(/\/$/, "").toLowerCase();
-        return currentPath === route.toLowerCase();
-      }
+  console.log("Current Path:", window.location.pathname);
+  console.log("Checking against:", route);
+
+  let currentPath = window.location.pathname.replace(/\/$/, "").toLowerCase();
+  
+  // Ensure home (`'/'`) is correctly handled
+  if (currentPath === "") currentPath = "/";
+
+  return currentPath === route.toLowerCase();
+}
 			  });
 			});
 		  </script>
