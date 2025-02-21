@@ -12,20 +12,20 @@
           </div>
             <div x-data class="menu">
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/') }">  
-                        <p @click="window.location.href='/'" :class="{ 'is-expanded': $store.menu.isActive}">Home</p>
+                        <a @click="window.location.href='/'" :class="{ 'is-expanded': $store.menu.isActive}">Home</a>
                     </div>
                       <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/work') }">  
-                          <p @click="window.location.href='/work'" :class="{ 'is-expanded': $store.menu.isActive}" >Work</p>
+                          <a @click="window.location.href='/work'" :class="{ 'is-expanded': $store.menu.isActive}" >Work</a>
                       </div>
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/about') }">  
-                        <p @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive }">About</p>
+                        <a @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive }">About</a>
                     </div>
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/services') }">  
-                        <p @click="window.location.href='/services'" :class="{ 'is-expanded': $store.menu.isActive }">Services</p>
+                        <a @click="window.location.href='/services'" :class="{ 'is-expanded': $store.menu.isActive }">Services</a>
                     </div>
                   
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/blog') }">
-                      <p @click="window.location.href='/blog'" :class="{ 'is-expanded': $store.menu.isActive }">Blog</p>
+                      <a @click="window.location.href='/blog'" :class="{ 'is-expanded': $store.menu.isActive }">Blog</a>
                     </div>
                  
                 </div>
@@ -160,7 +160,7 @@
   
     
     
-                      p {
+                      a {
                     -webkit-tap-highlight-color: transparent;
                     // border: solid red;
                     height: fit-content;
@@ -184,7 +184,7 @@
                         //   transition: all 0 ;
 
                           
-                          p {
+                          a {
                             color: #888888;
                         //   transition: all 0;
 
@@ -198,7 +198,7 @@
               }
               .menu :nth-child(1) {
   
-                p{
+                a{
   
                   &.is-expanded {
                       transform: translateY(0%);
@@ -210,7 +210,7 @@
               }
               .menu :nth-child(2) {
   
-                p{
+                a{
   
                   &.is-expanded {
                       transform: translateY(0%);
@@ -222,7 +222,7 @@
               }
               .menu :nth-child(3) {
   
-                p{
+                a{
   
                   &.is-expanded {
                       transform: translateY(0%);
@@ -234,7 +234,7 @@
               }
               .menu :nth-child(4) {
   
-                p{
+                a{
   
                   &.is-expanded {
                       transform: translateY(0%);
@@ -246,7 +246,7 @@
               }
               .menu :nth-child(5) {
   
-                p{
+                a{
   
                   &.is-expanded {
                       transform: translateY(0%);
