@@ -12,20 +12,20 @@
           </div>
             <div x-data class="menu">
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/') }">  
-                        <a @click="window.location.href='/'" :class="{ 'is-expanded': $store.menu.isActive}">Home</a>
+                        <a href="/" :class="{ 'is-expanded': $store.menu.isActive}">Home</a>
                     </div>
                       <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/work') }">  
-                          <a @click="window.location.href='/work'" :class="{ 'is-expanded': $store.menu.isActive}" >Work</a>
+                          <a href="work" :class="{ 'is-expanded': $store.menu.isActive}" >Work</a>
                       </div>
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/about') }">  
-                        <a @click="window.location.href='/about'" :class="{ 'is-expanded': $store.menu.isActive }">About</a>
+                        <a href="about" :class="{ 'is-expanded': $store.menu.isActive }">About</a>
                     </div>
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/services') }">  
-                        <a @click="window.location.href='/services'" :class="{ 'is-expanded': $store.menu.isActive }">Services</a>
+                        <a href="services" :class="{ 'is-expanded': $store.menu.isActive }">Services</a>
                     </div>
                   
                     <div class="home"  @click="$store.menu.isActive = !$store.menu.isActive" :class="{ 'is-active': $store.menu.isCurrentRoute('/blog') }">
-                      <a @click="window.location.href='/blog'" :class="{ 'is-expanded': $store.menu.isActive }">Blog</a>
+                      <a href="blog" :class="{ 'is-expanded': $store.menu.isActive }">Blog</a>
                     </div>
                  
                 </div>
